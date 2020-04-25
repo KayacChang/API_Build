@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://gitlab.fbk168.com/gamedevjp/api/core.git
 	branch = master
-	commit = 4132d5d992651ecd59ec3395cbf585b5209bb973
-	parent = 145d281cb1a153eaedc7814441db702becf0a3d1
+	commit = 3998ee5755d71418ea6de379d1426baf2d0bded3
+	parent = 44f136e30d6abbfbc55940bf6e1070101feb5666
 	method = merge
 	cmdver = 0.4.1

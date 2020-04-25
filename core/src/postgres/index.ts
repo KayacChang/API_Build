@@ -1,12 +1,9 @@
 import { Pool, PoolConfig, native } from "pg";
-
 import Table from "./table";
 
 let pool: Pool;
 
 async function init(config: PoolConfig) {
-  console.log(process.env);
-
   //
   if (pool) return;
 
