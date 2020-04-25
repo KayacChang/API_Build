@@ -30,7 +30,3 @@ services:
       dockerfile: "./dockerfiles/server/Dockerfile"
     ports:
       - "${SERVICE_PORT}:${SERVICE_PORT}"
-    depends_on:
-      - db
-      - redis
-    command: ./wait-for db:${PG_PORT} -- ./run

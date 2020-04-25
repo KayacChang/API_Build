@@ -18,5 +18,4 @@ WORKDIR /root/
 
 COPY --from=builder /bin .
 
-ADD https://raw.githubusercontent.com/eficode/wait-for/master/wait-for .
-RUN chmod +x wait-for
+ENTRYPOINT [ "./run" ]
