@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  db:
+    build:
+      context: "."
+      dockerfile: "./dockerfiles/db/Dockerfile"
+    volumes:
+      - ./.db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${PG_USER}
+      - POSTGRES_PASSWORD=${PG_PASSWORD}
+      - POSTGRES_DB=${PG_NAME}
+      - POSTGRES_HOST=${PG_HOST}
+
+  redis:
+    image: "redis:alpine"
+
+  core:
+    build:
+      context: "."
+      dockerfile: "./dockerfiles/core/Dockerfile"
+    depends_on:
+      - db
+      - redis
+
+  service:
+    build:
+      context: "."
+      dockerfile: "./dockerfiles/server/Dockerfile"
+    ports:
+      - "${SERVICE_PORT}:${SERVICE_PORT}"
+    depends_on:
+      - db
+      - redis
+    command: ./wait-for db:${PG_PORT} -- ./run

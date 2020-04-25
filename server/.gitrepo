@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://gitlab.fbk168.com/gamedevjp/api/server.git
+	branch = master
+	commit = 412dbcfbcf5dd976b3af9875a50fc204e9084e44
+	parent = 15de163ca88e9928e207dc51339eb3be6bc7c763
+	method = merge
+	cmdver = 0.4.1
